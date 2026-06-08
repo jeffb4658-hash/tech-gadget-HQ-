@@ -1,0 +1,510 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>TechGadgetHQ – Best Tech Gadgets & Gear Reviews</title>
+<meta name="description" content="Expert reviews and recommendations for the best tech gadgets, smart home devices, EDC gear, and outdoor tech. Find the right gadget for your lifestyle.">
+<meta name="keywords" content="tech gadgets, best gadgets, smart home, EDC gear, outdoor tech, gadget reviews">
+<link rel="canonical" href="https://techgadgethq.online/">
+<link rel="alternate" type="application/rss+xml" title="TechGadgetHQ RSS" href="/feed.xml">
+<link rel="sitemap" type="application/xml" href="/sitemap.xml">
+
+<!-- Open Graph -->
+<meta property="og:title" content="TechGadgetHQ – Best Tech Gadgets & Gear Reviews">
+<meta property="og:description" content="Expert reviews and recommendations for the best tech gadgets, smart home devices, EDC gear, and outdoor tech.">
+<meta property="og:url" content="https://techgadgethq.online/">
+<meta property="og:type" content="website">
+
+<!-- Schema.org -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebSite",
+  "name": "TechGadgetHQ",
+  "url": "https://techgadgethq.online",
+  "description": "Expert tech gadget reviews and buying guides",
+  "potentialAction": {
+    "@type": "SearchAction",
+    "target": "https://techgadgethq.online/search?q={search_term_string}",
+    "query-input": "required name=search_term_string"
+  }
+}
+</script>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&family=Barlow:wght@300;400;600;800&display=swap" rel="stylesheet">
+
+<style>
+:root {
+  --bg: #0a0a0f;
+  --surface: #12121a;
+  --card: #1a1a26;
+  --border: #2a2a3e;
+  --accent: #00d4ff;
+  --accent2: #ff6b35;
+  --text: #e8e8f0;
+  --muted: #888899;
+  --green: #00ff88;
+}
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+body {
+  background: var(--bg);
+  color: var(--text);
+  font-family: 'Barlow', sans-serif;
+  font-weight: 400;
+  line-height: 1.6;
+  overflow-x: hidden;
+}
+
+/* NAV */
+nav {
+  position: sticky; top: 0; z-index: 100;
+  background: rgba(10,10,15,0.92);
+  backdrop-filter: blur(12px);
+  border-bottom: 1px solid var(--border);
+  padding: 0 1.5rem;
+  display: flex; align-items: center; justify-content: space-between;
+  height: 60px;
+}
+.logo {
+  font-family: 'Space Mono', monospace;
+  font-size: 1.1rem;
+  color: var(--accent);
+  text-decoration: none;
+  letter-spacing: -0.02em;
+}
+.logo span { color: var(--accent2); }
+.nav-links { display: flex; gap: 1.5rem; list-style: none; }
+.nav-links a {
+  color: var(--muted); text-decoration: none;
+  font-size: 0.85rem; font-weight: 600; letter-spacing: 0.05em;
+  text-transform: uppercase; transition: color 0.2s;
+}
+.nav-links a:hover { color: var(--accent); }
+
+/* HERO */
+.hero {
+  padding: 5rem 1.5rem 4rem;
+  max-width: 900px; margin: 0 auto;
+  text-align: center;
+}
+.hero-badge {
+  display: inline-block;
+  background: rgba(0,212,255,0.1);
+  border: 1px solid rgba(0,212,255,0.3);
+  color: var(--accent);
+  font-family: 'Space Mono', monospace;
+  font-size: 0.7rem;
+  padding: 0.3rem 0.8rem;
+  border-radius: 2px;
+  letter-spacing: 0.1em;
+  margin-bottom: 1.5rem;
+}
+.hero h1 {
+  font-size: clamp(2.2rem, 6vw, 4rem);
+  font-weight: 800;
+  line-height: 1.1;
+  margin-bottom: 1.2rem;
+}
+.hero h1 em {
+  font-style: normal;
+  color: var(--accent);
+}
+.hero p {
+  font-size: 1.1rem;
+  color: var(--muted);
+  max-width: 560px;
+  margin: 0 auto 2.5rem;
+}
+.cta-row { display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap; }
+.btn-primary {
+  background: var(--accent);
+  color: #000;
+  padding: 0.75rem 1.8rem;
+  font-weight: 800;
+  font-size: 0.9rem;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  text-decoration: none;
+  border-radius: 3px;
+  transition: opacity 0.2s;
+}
+.btn-primary:hover { opacity: 0.85; }
+.btn-secondary {
+  border: 1px solid var(--border);
+  color: var(--text);
+  padding: 0.75rem 1.8rem;
+  font-weight: 600;
+  font-size: 0.9rem;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  text-decoration: none;
+  border-radius: 3px;
+  transition: border-color 0.2s;
+}
+.btn-secondary:hover { border-color: var(--accent); color: var(--accent); }
+
+/* STATS BAR */
+.stats-bar {
+  background: var(--surface);
+  border-top: 1px solid var(--border);
+  border-bottom: 1px solid var(--border);
+  padding: 1.2rem 1.5rem;
+  display: flex; justify-content: center; gap: 3rem;
+  flex-wrap: wrap;
+}
+.stat { text-align: center; }
+.stat-num {
+  font-family: 'Space Mono', monospace;
+  font-size: 1.4rem;
+  color: var(--accent);
+  display: block;
+}
+.stat-label {
+  font-size: 0.75rem;
+  color: var(--muted);
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+}
+
+/* CATEGORIES */
+.section { padding: 3.5rem 1.5rem; max-width: 1100px; margin: 0 auto; }
+.section-header {
+  display: flex; align-items: baseline; justify-content: space-between;
+  margin-bottom: 1.8rem;
+  border-bottom: 1px solid var(--border);
+  padding-bottom: 0.8rem;
+}
+.section-title {
+  font-family: 'Space Mono', monospace;
+  font-size: 0.8rem;
+  color: var(--accent);
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+.section-title-main {
+  font-size: 1.5rem;
+  font-weight: 800;
+  margin-top: 0.2rem;
+}
+.view-all {
+  color: var(--muted);
+  text-decoration: none;
+  font-size: 0.8rem;
+  font-weight: 600;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  transition: color 0.2s;
+}
+.view-all:hover { color: var(--accent); }
+
+.cat-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  gap: 1rem;
+}
+.cat-card {
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: 4px;
+  padding: 1.5rem;
+  text-decoration: none;
+  transition: border-color 0.2s, transform 0.2s;
+  display: block;
+}
+.cat-card:hover { border-color: var(--accent); transform: translateY(-2px); }
+.cat-icon { font-size: 1.8rem; margin-bottom: 0.8rem; display: block; }
+.cat-name {
+  font-weight: 800;
+  font-size: 1rem;
+  color: var(--text);
+  margin-bottom: 0.3rem;
+}
+.cat-count {
+  font-family: 'Space Mono', monospace;
+  font-size: 0.7rem;
+  color: var(--muted);
+}
+
+/* POSTS GRID */
+.posts-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 1.5rem;
+}
+.post-card {
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: 4px;
+  overflow: hidden;
+  transition: border-color 0.2s, transform 0.2s;
+}
+.post-card:hover { border-color: var(--accent); transform: translateY(-2px); }
+.post-thumb {
+  height: 160px;
+  background: linear-gradient(135deg, #1a1a30 0%, #0d1a2e 100%);
+  display: flex; align-items: center; justify-content: center;
+  font-size: 3rem;
+  position: relative;
+  overflow: hidden;
+}
+.post-thumb::before {
+  content: '';
+  position: absolute; inset: 0;
+  background: linear-gradient(45deg, transparent 40%, rgba(0,212,255,0.05) 100%);
+}
+.post-body { padding: 1.2rem; }
+.post-tag {
+  font-family: 'Space Mono', monospace;
+  font-size: 0.65rem;
+  color: var(--accent2);
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  margin-bottom: 0.5rem;
+  display: block;
+}
+.post-title {
+  font-size: 1rem;
+  font-weight: 700;
+  line-height: 1.4;
+  margin-bottom: 0.6rem;
+}
+.post-title a { color: var(--text); text-decoration: none; }
+.post-title a:hover { color: var(--accent); }
+.post-excerpt {
+  font-size: 0.85rem;
+  color: var(--muted);
+  line-height: 1.6;
+  margin-bottom: 1rem;
+}
+.post-meta {
+  display: flex; justify-content: space-between; align-items: center;
+  font-size: 0.75rem; color: var(--muted);
+}
+.rating { color: var(--accent2); }
+
+/* FEATURED */
+.featured-card {
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: 4px;
+  padding: 2rem;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2rem;
+  align-items: center;
+  margin-bottom: 1.5rem;
+}
+.featured-label {
+  font-family: 'Space Mono', monospace;
+  font-size: 0.65rem;
+  color: var(--green);
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  border: 1px solid var(--green);
+  padding: 0.2rem 0.5rem;
+  border-radius: 2px;
+  display: inline-block;
+  margin-bottom: 1rem;
+}
+.featured-title { font-size: 1.6rem; font-weight: 800; margin-bottom: 0.8rem; }
+.featured-excerpt { color: var(--muted); font-size: 0.95rem; margin-bottom: 1.5rem; }
+.featured-thumb {
+  height: 220px;
+  background: linear-gradient(135deg, #0d1a2e 0%, #1a0d2e 100%);
+  border-radius: 3px;
+  display: flex; align-items: center; justify-content: center;
+  font-size: 5rem;
+}
+@media (max-width: 600px) {
+  .featured-card { grid-template-columns: 1fr; }
+  .featured-thumb { height: 160px; order: -1; }
+  .nav-links { display: none; }
+  .stats-bar { gap: 1.5rem; }
+}
+
+/* FOOTER */
+footer {
+  background: var(--surface);
+  border-top: 1px solid var(--border);
+  padding: 2.5rem 1.5rem;
+  margin-top: 4rem;
+}
+.footer-inner {
+  max-width: 1100px; margin: 0 auto;
+  display: grid; grid-template-columns: 2fr 1fr 1fr; gap: 2rem;
+}
+.footer-brand .logo { font-size: 1rem; display: block; margin-bottom: 0.8rem; }
+.footer-desc { font-size: 0.85rem; color: var(--muted); max-width: 280px; }
+.footer-col h4 {
+  font-family: 'Space Mono', monospace;
+  font-size: 0.7rem;
+  color: var(--accent);
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  margin-bottom: 1rem;
+}
+.footer-col ul { list-style: none; }
+.footer-col li { margin-bottom: 0.5rem; }
+.footer-col a { color: var(--muted); text-decoration: none; font-size: 0.85rem; transition: color 0.2s; }
+.footer-col a:hover { color: var(--text); }
+.footer-bottom {
+  max-width: 1100px; margin: 2rem auto 0;
+  padding-top: 1.5rem;
+  border-top: 1px solid var(--border);
+  display: flex; justify-content: space-between; align-items: center;
+  flex-wrap: wrap; gap: 0.5rem;
+}
+.footer-bottom p { font-size: 0.75rem; color: var(--muted); }
+.affiliate-notice {
+  font-size: 0.72rem;
+  color: var(--muted);
+  max-width: 1100px; margin: 1rem auto 0;
+  opacity: 0.7;
+}
+@media (max-width: 600px) {
+  .footer-inner { grid-template-columns: 1fr; }
+}
+</style>
+</head>
+<body>
+
+<nav>
+  <a href="/" class="logo">TechGadget<span>HQ</span></a>
+  <ul class="nav-links">
+    <li><a href="/categories/smart-home.html">Smart Home</a></li>
+    <li><a href="/categories/edc.html">EDC</a></li>
+    <li><a href="/categories/outdoor-tech.html">Outdoor</a></li>
+    <li><a href="/categories/survival-tech.html">Survival</a></li>
+    <li><a href="/blog/">Reviews</a></li>
+  </ul>
+</nav>
+
+<section class="hero">
+  <div class="hero-badge">// EXPERT REVIEWS & BUYING GUIDES</div>
+  <h1>The Best <em>Tech Gadgets</em><br>Reviewed & Ranked</h1>
+  <p>Hands-on analysis of the gadgets worth buying. Smart home, EDC, outdoor tech, and survival gear — no fluff, just signal.</p>
+  <div class="cta-row">
+    <a href="/categories/best-picks.html" class="btn-primary">Top Picks 2025</a>
+    <a href="/blog/" class="btn-secondary">All Reviews</a>
+  </div>
+</section>
+
+<div class="stats-bar">
+  <div class="stat"><span class="stat-num">200+</span><span class="stat-label">Products Reviewed</span></div>
+  <div class="stat"><span class="stat-num">4</span><span class="stat-label">Categories</span></div>
+  <div class="stat"><span class="stat-num">Weekly</span><span class="stat-label">New Reviews</span></div>
+  <div class="stat"><span class="stat-num">★ 4.8</span><span class="stat-label">Avg Rating</span></div>
+</div>
+
+<div class="section">
+  <div class="section-header">
+    <div>
+      <div class="section-title">// Browse</div>
+      <div class="section-title-main">Shop by Category</div>
+    </div>
+  </div>
+  <div class="cat-grid">
+    <a href="/categories/smart-home.html" class="cat-card">
+      <span class="cat-icon">🏠</span>
+      <div class="cat-name">Smart Home</div>
+      <div class="cat-count">Hubs · Cameras · Lights · Locks</div>
+    </a>
+    <a href="/categories/edc.html" class="cat-card">
+      <span class="cat-icon">🔦</span>
+      <div class="cat-name">EDC Gear</div>
+      <div class="cat-count">Flashlights · Tools · Knives · Bags</div>
+    </a>
+    <a href="/categories/outdoor-tech.html" class="cat-card">
+      <span class="cat-icon">🌲</span>
+      <div class="cat-name">Outdoor Tech</div>
+      <div class="cat-count">GPS · Solar · Comms · Wearables</div>
+    </a>
+    <a href="/categories/survival-tech.html" class="cat-card">
+      <span class="cat-icon">⚡</span>
+      <div class="cat-name">Survival Tech</div>
+      <div class="cat-count">Power · Water · Fire · Navigation</div>
+    </a>
+    <a href="/categories/audio-video.html" class="cat-card">
+      <span class="cat-icon">🎧</span>
+      <div class="cat-name">Audio & Video</div>
+      <div class="cat-count">Earbuds · Cameras · Projectors</div>
+    </a>
+    <a href="/categories/best-picks.html" class="cat-card">
+      <span class="cat-icon">🏆</span>
+      <div class="cat-name">Best Picks</div>
+      <div class="cat-count">Editor's top-rated gear</div>
+    </a>
+  </div>
+</div>
+
+<div class="section" id="featured">
+  <div class="section-header">
+    <div>
+      <div class="section-title">// Featured</div>
+      <div class="section-title-main">Editor's Pick</div>
+    </div>
+  </div>
+  <div class="featured-card">
+    <div>
+      <span class="featured-label">★ Top Rated 2025</span>
+      <div class="featured-title">Best Smart Home Starter Kits That Actually Work</div>
+      <p class="featured-excerpt">We tested 12 smart home ecosystems so you don't have to. Here's what's worth your money in 2025 — and what to avoid.</p>
+      <a href="/blog/best-smart-home-starter-kits.html" class="btn-primary">Read Review →</a>
+    </div>
+    <div class="featured-thumb">🏠</div>
+  </div>
+</div>
+
+<div class="section" id="latest">
+  <div class="section-header">
+    <div>
+      <div class="section-title">// Latest</div>
+      <div class="section-title-main">Recent Reviews</div>
+    </div>
+    <a href="/blog/" class="view-all">View All →</a>
+  </div>
+  <div class="posts-grid" id="posts-container">
+    <!-- Auto-generated posts injected here by GitHub Actions -->
+  </div>
+</div>
+
+<footer>
+  <div class="footer-inner">
+    <div class="footer-brand">
+      <a href="/" class="logo">TechGadget<span style="color:var(--accent2)">HQ</span></a>
+      <p class="footer-desc">Expert reviews and buying guides for tech gadgets, smart home devices, EDC gear, and outdoor tech. Updated weekly.</p>
+    </div>
+    <div class="footer-col">
+      <h4>Categories</h4>
+      <ul>
+        <li><a href="/categories/smart-home.html">Smart Home</a></li>
+        <li><a href="/categories/edc.html">EDC Gear</a></li>
+        <li><a href="/categories/outdoor-tech.html">Outdoor Tech</a></li>
+        <li><a href="/categories/survival-tech.html">Survival Tech</a></li>
+        <li><a href="/categories/best-picks.html">Best Picks</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h4>Site</h4>
+      <ul>
+        <li><a href="/about.html">About</a></li>
+        <li><a href="/blog/">All Reviews</a></li>
+        <li><a href="/sitemap.xml">Sitemap</a></li>
+        <li><a href="/feed.xml">RSS Feed</a></li>
+        <li><a href="/privacy.html">Privacy Policy</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <p>© 2025 TechGadgetHQ. All rights reserved.</p>
+    <p style="font-family:'Space Mono',monospace;font-size:0.7rem;color:var(--accent)">// BUILT ON AI</p>
+  </div>
+  <p class="affiliate-notice">TechGadgetHQ is a participant in the Amazon Services LLC Associates Program, an affiliate advertising program designed to provide a means for sites to earn advertising fees by advertising and linking to Amazon.com. As an Amazon Associate we earn from qualifying purchases.</p>
+</footer>
+
+</body>
+</html>
