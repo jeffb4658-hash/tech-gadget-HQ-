@@ -1,0 +1,33 @@
+name: Daily Content Engine
+
+on:
+  schedule:
+    - cron: '0 8 * * *'
+  workflow_dispatch:
+
+jobs:
+  generate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - run: pip install groq==0.11.0 httpx==0.27.2
+
+      - name: Run engine
+        env:
+          GROQ_API_KEY: ${{ secrets.GROQ_API_KEY }}
+        run: python techgadget_engine.py
+
+      - name: Commit and push
+        run: |
+          git config user.name "TechGadgetHQ Bot"
+          git config user.email "bot@techgadgethq.online"
+          git add blog/ sitemap.xml feed.xml posts_index.json
+          git diff --staged --quiet || git commit -m "Daily content $(date +%Y-%m-%d)"
+          git push
